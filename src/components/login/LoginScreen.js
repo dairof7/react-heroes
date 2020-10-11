@@ -8,6 +8,7 @@ export const LoginScreen = ({history}) => {
       
       const handleLogin = () => {
 
+        const lastpath = localStorage.getItem('lastpath') || '/';
         //me permite ir a una ruta, agregandola a la historia
         //history.push('/')
         dispatch({
@@ -17,7 +18,7 @@ export const LoginScreen = ({history}) => {
           }
         })      
         // reemplaza la historia, no permite volver a la pantalla anterior
-        history.replace('/')
+        history.replace(lastpath)
       }
   return (
 
